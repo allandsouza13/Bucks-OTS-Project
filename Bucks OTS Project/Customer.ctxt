@@ -1,10 +1,11 @@
 #BlueJ class context
 comment0.target=Customer
-comment0.text=\r\n\ The\ Customer\ class\ represents\ a\ customer\ with\ various\ attributes.\r\n
 comment1.params=
-comment1.target=java.util.List\ viewUpcomingShows()
-comment1.text=\r\n\ View\ upcoming\ shows\ for\ the\ customer.\r\n\r\n\ @return\ List\ of\ upcoming\ shows\r\n
+comment1.target=int\ login()
 comment2.params=
-comment2.target=int\ login()
-comment2.text=\r\n\ Login\ method\ for\ customer\ authentication.\r\n\r\n\ @return\ Status\ code\ (403\ for\ authentication\ failure,\ 200\ for\ success)\r\n
-numComments=3
+comment2.target=void\ addCustomerRecord()
+comment3.params=
+comment3.target=java.lang.String\ getFirstName()
+comment4.params=
+comment4.target=java.lang.String\ getLastName()
+numComments=5

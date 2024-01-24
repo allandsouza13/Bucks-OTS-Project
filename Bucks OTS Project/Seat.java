@@ -1,46 +1,31 @@
-/**
- * The Seat class represents a seat with various attributes.
- */
-public class Seat {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-    // Unique identifier for the seat
-    public int Id;
+class Seat {
+    private int seatNumber;
+    private boolean reserved;
 
-    // Location of the seat
-    public String Location;
-
-    // Price of the seat
-    public int Price;
-
-    // Type of the seat
-    public String Type;
-
-    // Indicates whether the seat is assigned or not
-    public boolean Assigned;
-
-    /**
-     * Constructor to initialize a seat with specified attributes.
-     */
-    public Seat(int id, String location, int price, String type, boolean assigned) {
-        this.Id = id;
-        this.Location = location;
-        this.Price = price;
-        this.Type = type;
-        this.Assigned = assigned;
+    public Seat(int seatNumber) {
+        this.seatNumber = seatNumber;
+        this.reserved = false;
     }
 
-    // Getters and setters can be added if needed
+    public int getSeatNumber() {
+        return seatNumber;
+    }
 
-    // Example getter and setter:
-    // public int getId() {
-    //     return Id;
-    // }
-    //
-    // public void setId(int id) {
-    //     this.Id = id;
-    // }
+    public boolean isReserved() {
+        return reserved;
+    }
 
-    // Similar getter and setter methods can be added for other fields
+    public void reserveSeat(Customer customer) {
+        reserved = true;
+        // Additional logic if needed
+    }
 
-    // Additional methods can be added as per the requirements
+    public void releaseSeat() {
+        reserved = false;
+        // Additional logic if needed
+    }
 }

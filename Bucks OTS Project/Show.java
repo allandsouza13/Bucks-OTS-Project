@@ -1,104 +1,86 @@
-import java.util.List;
+import java.util.Scanner;
 
-/**
- * The Show class represents a show with various attributes.
- */
 public class Show {
+    private static int idCounter = 1;
 
-    // Unique identifier for the show
-    public int Id;
+    private final int id;
+    private String name;
+    private String date;
+    private String time;
+    private String description;
 
-    // Name of the show
-    public String Name;
-
-    // Date of the show
-    public String Date;
-
-    // Time of the show
-    public String Time;
-
-    // Description of the show
-    public String Description;
-
-    // Reference to the seating chart associated with the show
-    public SeatingChart seatingChart;
-
-    // List of predefined show names
-    public static final List<String> SHOW_NAMES = List.of("Comedy", "Gaming", "Talk Show", "Reality Show");
-
-    /**
-     * Constructor to initialize a show with specified attributes.
-     */
-    public Show(int id, String name, String date, String time, String description) {
-        Id = id;
-        Name = name;
-        Date = date;
-        Time = time;
-        Description = description;
+    public Show(String name, String date, String time, String description) {
+        this.id = idCounter++;
+        this.name = name;
+        this.date = date;
+        this.time = time;
+        this.description = description;
     }
 
-    /**
-     * View available seats for the show.
-     *
-     * @return List of available seats
-     */
-    public List<Seat> viewAvailableSeats() {
-        // Retrieve available seats from the associated seating chart
-        List<Seat> availableSeats = seatingChart.displayAvailableSeats();
-        return availableSeats;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * Create a new show in the database and allocate a new seating chart.
-     *
-     * @param show The show to be created
-     */
-    public void createShow(Show show) {
-        // Execute SQL statement to insert show details into the database
-        // Note: This is a placeholder and may need adjustments based on your database setup
-        // Statement stmt = // Create a Statement object based on your database connection
-        // stmt.execute("INSERT INTO show (ID, name, date, time, description) VALUES (" + show.Id, show.Date, show.Time, show.Description + ")");
-        
-        // Allocate a new seating chart for the show
-        allocateSeatingChart();
+    public String getName() {
+        return name;
     }
 
-    /**
-     * Edit the details of an existing show in the database.
-     *
-     * @param show The updated show details
-     */
-    public void editShow(Show show) {
-        // Execute SQL statement to update show details in the database
-        // Note: This is a placeholder and may need adjustments based on your database setup
-        // Statement stmt = // Create a Statement object based on your database connection
-        // stmt.execute("UPDATE show SET name = " + show.Name + " date = " + show.Date + " time = " + show.Time + " description = " + show.Description + " WHERE ID = " + Id);
+    public String getDate() {
+        return date;
     }
 
-    /**
-     * Delete the show from the database and its associated seating chart.
-     */
+    public String getTime() {
+        return time;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void createShow() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter show details:");
+
+        System.out.print("Name: ");
+        this.name = scanner.nextLine();
+
+        System.out.print("Date: ");
+        this.date = scanner.nextLine();
+
+        System.out.print("Time: ");
+        this.time = scanner.nextLine();
+
+        System.out.print("Description: ");
+        this.description = scanner.nextLine();
+
+        // Simulate database interaction for creating a show
+        System.out.println("Show created: " + this);
+    }
+
+    public void editShow(Show updatedShow) {
+        this.name = updatedShow.getName();
+        this.date = updatedShow.getDate();
+        this.time = updatedShow.getTime();
+        this.description = updatedShow.getDescription();
+
+        // Simulate database interaction for updating a show
+        System.out.println("Show updated: " + this);
+    }
+
     public void deleteShow() {
-        // Execute SQL statement to delete show from the database
-        // Note: This is a placeholder and may need adjustments based on your database setup
-        // Statement stmt = // Create a Statement object based on your database connection
-        // stmt.execute("DELETE FROM show WHERE ID = " + Id);
-        
-        // Delete the associated seating chart
-        deleteSeatingChart();
+        // Simulate database interaction for deleting a show
+        System.out.println("Show deleted: " + this);
     }
 
-    /**
-     * Allocate a new seating chart for the show.
-     */
-    private void allocateSeatingChart() {
-        // Implementation for allocating a new seating chart goes here
-    }
-
-    /**
-     * Delete the seating chart associated with the show.
-     */
-    private void deleteSeatingChart() {
-        // Implementation for deleting the seating chart goes here
+    @Override
+    public String toString() {
+        return "Show{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

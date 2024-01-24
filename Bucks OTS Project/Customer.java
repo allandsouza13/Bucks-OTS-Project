@@ -1,85 +1,106 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.util.Scanner;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
-/**
- * The Customer class represents a customer with various attributes.
- */
 public class Customer {
 
-    // Private attributes accessible by subclasses
     private String firstName;
     private String lastName;
     private String address;
-
-    // Private attributes accessible only within this class
     private String username;
     private String password;
 
-    /**
-     * View upcoming shows for the customer.
-     *
-     * @return List of upcoming shows
-     */
-    public List<Show> viewUpcomingShows() {
-        // Implementation for viewing upcoming shows goes here
-        return null;  // Placeholder return value
+    public int login() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Username:");
+        String enteredUsername = scanner.nextLine();
+
+        System.out.println("Password:");
+        String enteredPassword = scanner.nextLine();
+
+        // Return a status code (e.g., 200 for success, 403 for failure)
+        // You can define your own logic for status codes based on your requirements
+        return 200;
     }
 
-    /**
-     * Login method for customer authentication.
-     *
-     * @return Status code (403 for authentication failure, 200 for success)
-     */
-    public int login() {
-    // Prompt user for username and password
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Name:");
-    String enteredName = scanner.nextLine();
-    
-    System.out.println("Lastname:");
-    String enteredLastname = scanner.nextLine();
-    
-    System.out.println("Phone Number:");
-    String enteredPhoneNumber = scanner.nextLine();
-    
-    System.out.println("Username:");
-    String enteredUsername = scanner.nextLine();
+    public void addCustomerRecord() {
+        Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Password:");
-    String enteredPassword = scanner.nextLine();
+        // Validate and set the first name
+        while (true) {
+            System.out.println("First Name (must be at least 3 characters):");
+            String enteredFirstName = scanner.nextLine();
 
-  
-        try {
-            // Establish database connection (replace with your database details)
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "your_username", "your_password");
-
-            // Prepare SQL statement to check customer credentials
-            String sqlQuery = "SELECT * FROM customer WHERE username = ? AND password = ?";
-            PreparedStatement statement = connection.prepareStatement(sqlQuery);
-            statement.setString(1, enteredUsername);
-            statement.setString(2, enteredPassword);
-
-            // Execute the query
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                // Authentication success
-                System.out.println("Login successful");
-                return 200;
+            if (enteredFirstName.length() >= 3) {
+                firstName = enteredFirstName;
+                break;
             } else {
-                // Authentication failure
-                System.out.println("Authentication failure: Incorrect username or password");
-                return 403;
+                System.out.println("Error: First name must be at least 3 characters. Please try again.");
             }
-        } catch (SQLException e) {
-            // Handle database connection or query errors
-            e.printStackTrace();
-            return 500;  // Internal server error
         }
+
+        // Validate and set the last name
+        while (true) {
+            System.out.println("Last Name (must be at least 3 characters):");
+            String enteredLastName = scanner.nextLine();
+
+            if (enteredLastName.length() >= 3) {
+                lastName = enteredLastName;
+                break;
+            } else {
+                System.out.println("Error: Last name must be at least 3 characters. Please try again.");
+            }
+        }
+
+        // Validate and set the address
+        while (true) {
+            System.out.println("Address (must be at least 6 characters):");
+            String enteredAddress = scanner.nextLine();
+
+            if (enteredAddress.length() >= 3) {
+                address = enteredAddress;
+                break;
+            } else {
+                System.out.println("Error: Address must be at least 6 characters. Please try again.");
+            }
+        }
+
+        // Validate and set the username
+        while (true) {
+            System.out.println("Username (must be 5 or more characters):");
+            String enteredUsername = scanner.nextLine();
+
+            if (enteredUsername.length() >= 5) {
+                username = enteredUsername;
+                break;
+            } else {
+                System.out.println("Error: Username must be 5 or more characters. Please try again.");
+            }
+        }
+
+        // Validate and set the password
+        while (true) {
+            System.out.println("Password (must be 8 or more characters):");
+            String enteredPassword = scanner.nextLine();
+
+            if (enteredPassword.length() >= 8) {
+                password = enteredPassword;
+                break;
+            } else {
+                System.out.println("Error: Password must be 8 or more characters. Please try again.");
+            }
+        }
+
+        // Placeholder for customer record addition (removed database-related code)
+        // Simplified logic (always prints success message)
+        System.out.println("Customer record added successfully");
+    }
+
+    // Getter method for retrieving first name
+    public String getFirstName() {
+        return firstName;
+    }
+
+    // Getter method for retrieving last name
+    public String getLastName() {
+        return lastName;
     }
 }

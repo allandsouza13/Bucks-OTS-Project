@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=VenueManager
-comment0.text=\r\n\ The\ VenueManager\ class\ represents\ a\ venue\ manager\ who\ can\ manage\ shows.\r\n\ Inherits\ from\ the\ User\ class.\r\n
+comment0.text=\r\n\ The\ VenueManager\ class\ represents\ a\ venue\ manager\ who\ can\ manage\ shows.\r\n\ Inherits\ from\ the\ Customer\ class.\r\n
 comment1.params=
 comment1.target=void\ addShow()
 comment1.text=\r\n\ Adds\ a\ new\ show\ to\ the\ venue.\r\n
@@ -10,4 +10,6 @@ comment2.text=\r\n\ Edits\ an\ existing\ show\ in\ the\ venue.\r\n\r\n\ @param\ 
 comment3.params=show
 comment3.target=void\ cancelShow(Show)
 comment3.text=\r\n\ Cancels\ a\ show\ in\ the\ venue.\r\n\r\n\ @param\ show\ The\ show\ to\ be\ canceled\r\n
-numComments=4
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5
