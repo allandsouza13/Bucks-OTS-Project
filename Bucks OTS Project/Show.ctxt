@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Show
+comment0.text=\r\n\ The\ Show\ class\ represents\ a\ show\ with\ various\ attributes.\r\n
+comment1.params=id\ name\ date\ time\ description
+comment1.target=Show(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ to\ initialize\ a\ show\ with\ specified\ attributes.\r\n
+comment2.params=
+comment2.target=java.util.List\ viewAvailableSeats()
+comment2.text=\r\n\ View\ available\ seats\ for\ the\ show.\r\n\r\n\ @return\ List\ of\ available\ seats\r\n
+comment3.params=show
+comment3.target=void\ createShow(Show)
+comment3.text=\r\n\ Create\ a\ new\ show\ in\ the\ database\ and\ allocate\ a\ new\ seating\ chart.\r\n\r\n\ @param\ show\ The\ show\ to\ be\ created\r\n
+comment4.params=show
+comment4.target=void\ editShow(Show)
+comment4.text=\r\n\ Edit\ the\ details\ of\ an\ existing\ show\ in\ the\ database.\r\n\r\n\ @param\ show\ The\ updated\ show\ details\r\n
+comment5.params=
+comment5.target=void\ deleteShow()
+comment5.text=\r\n\ Delete\ the\ show\ from\ the\ database\ and\ its\ associated\ seating\ chart.\r\n
+comment6.params=
+comment6.target=void\ allocateSeatingChart()
+comment6.text=\r\n\ Allocate\ a\ new\ seating\ chart\ for\ the\ show.\r\n
+comment7.params=
+comment7.target=void\ deleteSeatingChart()
+comment7.text=\r\n\ Delete\ the\ seating\ chart\ associated\ with\ the\ show.\r\n
+numComments=8

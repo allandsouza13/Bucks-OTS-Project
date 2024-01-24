@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Seat
+comment0.text=\r\n\ The\ Seat\ class\ represents\ a\ seat\ with\ various\ attributes.\r\n
+comment1.params=id\ location\ price\ type\ assigned
+comment1.target=Seat(int,\ java.lang.String,\ int,\ java.lang.String,\ boolean)
+comment1.text=\r\n\ Constructor\ to\ initialize\ a\ seat\ with\ specified\ attributes.\r\n
+numComments=2
